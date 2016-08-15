@@ -1,0 +1,146 @@
+
+{{#if profile.id}}
+<div class="profile-card">
+
+  <header>
+
+
+    <a href="http://kanishkkunal.in">
+      <img src="http://livefreeandstart.com/wp-content/uploads/2015/08/1663453-e1441047502792.png">
+    </a>
+
+    <h1>{{profile.firstname}} {{profile.lastname}}</h1>
+    <h2>2300 Sparks</h2>
+
+
+  </header>
+
+
+  <div class="profile-bio">
+    <p>{{profile.description}}</p>
+  </div>
+
+  <!-- some social links to show off -->
+  <div class="profile-social-links">
+    <ul class="profile-social-links">
+
+
+    <li>
+      {{#link-to 'index'}}
+        <i class="material-icons">whatshot</i>
+      {{/link-to}}
+    </li>
+
+
+    <li>
+      {{#link-to 'index'}}
+        <i class="material-icons" style="color:red">favorite_border</i>
+      {{/link-to}}
+    </li>
+
+
+    <li>
+      {{#link-to 'index'}}
+        <i class="material-icons" style="color:black">people_outline</i>
+      {{/link-to}}
+    </li>
+
+  </ul>
+</div>
+</div>
+  <div id="background">
+  <div id="gallery">
+    <br />
+    <h2>{{profile.firstname}}'s Featured Sparks</h2>
+    <figure class="pic2">
+      <img src="https://i.imgsafe.org/df9db8c6df.jpg" />
+      <figcaption>Summer 2014</figcaption>
+    </figure>
+    <figure class="pic2">
+      <img src="https://i.imgsafe.org/ded65e75a0.jpg" />
+      <figcaption>Early morning</figcaption>
+    </figure>
+    <h2>Live Sparks</h2>
+    <figure class="pic1">
+      <img src="https://i.imgsafe.org/ded6595cce.jpg" />
+      <figcaption>Summer 2014</figcaption>
+    </figure>
+    <figure class="pic1">
+      <img src="https://i.imgsafe.org/ded65e75a0.jpg" />
+      <figcaption>Early morning</figcaption>
+    </figure>
+    <figure class="pic1">
+      <img src="https://i.imgsafe.org/ded66abed9.jpg" />
+      <figcaption>Early morning</figcaption>
+    </figure>
+    <figure class="pic1">
+      <img src="https://i.imgsafe.org/ded6723583.jpg" />
+      <figcaption>Summer 2014</figcaption>
+    </figure>
+    <figure class="pic1">
+      <img src="https://i.imgsafe.org/ded6595cce.jpg" />
+      <figcaption>Summer 2014</figcaption>
+    </figure>
+    <figure class="pic1">
+      <img src="https://i.imgsafe.org/ded65e75a0.jpg" />
+      <figcaption>Early morning</figcaption>
+    </figure>
+    <figure class="pic1">
+      <img src="https://i.imgsafe.org/ded66abed9.jpg" />
+      <figcaption>Early morning</figcaption>
+    </figure>
+    <figure class="pic1">
+      <img src="https://i.imgsafe.org/ded6723583.jpg" />
+      <figcaption>Summer 2014</figcaption>
+    </figure>
+    <figure class="pic1">
+      <img src="https://i.imgsafe.org/ded6595cce.jpg" />
+      <figcaption>Summer 2014</figcaption>
+    </figure>
+    <figure class="pic1">
+      <img src="https://i.imgsafe.org/ded65e75a0.jpg" />
+      <figcaption>Early morning</figcaption>
+    </figure>
+    <figure class="pic1">
+      <img src="https://i.imgsafe.org/ded66abed9.jpg" />
+      <figcaption>Early morning</figcaption>
+    </figure>
+    <figure class="pic1">
+      <img src="https://i.imgsafe.org/ded6723583.jpg" />
+      <figcaption>Summer 2014</figcaption>
+    </figure>
+    <figure class="pic1">
+      <img src="https://i.imgsafe.org/ded6595cce.jpg" />
+      <figcaption>Summer 2014</figcaption>
+    </figure>
+    <figure class="pic1">
+      <img src="https://i.imgsafe.org/ded65e75a0.jpg" />
+      <figcaption>Early morning</figcaption>
+    </figure>
+    <figure class="pic1">
+      <img src="https://i.imgsafe.org/ded66abed9.jpg" />
+      <figcaption>Early morning</figcaption>
+    </figure>
+    <figure class="pic1">
+      <img src="https://i.imgsafe.org/ded6723583.jpg" />
+      <figcaption>Summer 2014</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div style="text-align:center; width:100%; clear:both;">
+  <ul class="pagination pagination-primary">
+    <li><a href="#"><</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li class="active"><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">></a></li>
+  </ul>
+</div>
+
+
+{{else}}
+{{sign-up/new-profile-form submit="submit"}}
+{{/if}}

@@ -1,0 +1,50 @@
+<center>
+  <form {{action "submit" on="submit"}}>
+  <div class="create">
+<h3 style="color:#0F2538; text-align:center;">Create Your FitFire Profile</h3>
+  <div class="col-sm-6">
+  	<div class="form-group">
+  		<!-- <span class="input-group-addon">
+  			<i class="material-icons">verified_user</i>
+  		</span> -->
+      {{input type="text" class="form-control"
+              id="firstname" required="true"
+              placeholder="First Name"
+              value=profile.firstname}}
+  	</div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <!-- <span class="input-group-addon">
+        <i class="material-icons">verified_user</i>
+      </span> -->
+      {{input type="text" class="form-control"
+              id="lastname" required="true"
+              placeholder="Last Name"
+              value=profile.lastname}}
+    </div>
+  </div>
+  <br />
+  <br />
+  <br />
+  <div class="form-group">
+    <span class="form-group-addon">
+      <i class="material-icons">chat</i>
+    </span>
+    {{input type="text" class="form-control"
+            id="description" required="true"
+            placeholder="Describe Yourself"
+            value=profile.description}}
+  </div>
+  <br />
+<center><button type="submit" class="btn btn-primary">
+  Submit
+</button>
+
+<button class="btn btn-default" {{action "reset"}}>
+  Cancel
+</button>
+</center>
+</div>
+</form>
+</center>

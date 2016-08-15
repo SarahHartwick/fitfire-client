@@ -5,28 +5,43 @@
     <div class="collapse navbar-collapse" id="navigation">
       <ul class="nav navbar-nav">
         {{#if isAuthenticated}}
-        <li>{{#link-to "users"}}Users{{/link-to}}</li>
+        <li class="navlink">{{#link-to "profiles"}}VIEW PROFILES{{/link-to}}</li>
+        <li class="navlink">{{#link-to "influencers"}}VIEW INFLUENCERS{{/link-to}}</li>
+        <li class="navlink">{{#link-to "my-profile"}}MY PROFILE{{/link-to}}</li>
+        <li class="navlink">{{#link-to "sparks"}}LIVE SPARKS{{/link-to}}</li>
+        <li class="navlink">{{#link-to "new-spark"}}CREATE SPARK{{/link-to}}</li>
+        <li class="navlink">{{#link-to "activity-feed"}}ACTIVITY FEED{{/link-to}}</li>
         {{/if}}
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {{#if isAuthenticated}}
-        <li>{{#link-to "change-password"}}Change Password{{/link-to}}</li>
-        <li><a href="#" {{action "signOut"}}>Sign Out</a></li>
+        <!-- <li class="navlink">MY STARTUPS</li> -->
+        <li class="navlink">{{#link-to "change-password"}}CHANGE PASSWORD{{/link-to}}</li>
+        <li class="navlink"><a href="#" {{action "signOut"}}>SIGN OUT</a></li>
         {{else}}
-        <li>{{#link-to "sign-up"}}Sign Up{{/link-to}}</li>
-        <li>{{#link-to "sign-in"}}Sign In{{/link-to}}</li>
+        <li class="navlink">{{#link-to "sign-up"}}Sign Up{{/link-to}}</li>
+        <li class="navlink">{{#link-to "sign-in"}}Sign In{{/link-to}}</li>
         {{/if}}
       </ul>
     </div>
   </div>
 </nav>
 
-<h1>Welcome to Ember!</h1>
+<!-- <h1>Start</h1> -->
 
-{{#each flashMessages.queue as |flash|}}
+<div style="width:30%; margin:0 auto;">
+  {{#each flashMessages.queue as |flash|}}
   {{flash-message flash=flash}}
 {{/each}}
+</div>
 
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-10 col-md-offset-1" style="margin-top:40px;">
   {{outlet}}
+</div>
+
+<div style="height:45px; clear:both;"></div>
+
+<div class="navbar navbar-default navbar-bottom" style="height:50px; clear:both;
+text-align:center; padding:15px; clearfix:auto;">
+  <p style="color:#fff">© Hartwick Media 2016</p>
 </div>

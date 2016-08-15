@@ -1,0 +1,70 @@
+<div class="profile-card">
+
+  <header>
+
+
+    <a href="http://kanishkkunal.in">
+      <img src="http://livefreeandstart.com/wp-content/uploads/2015/08/1663453-e1441047502792.png">
+    </a>
+
+    <h1>{{profile.firstname}} {{profile.lastname}}</h1>
+    <h2>2300 Sparks</h2>
+
+
+  </header>
+
+
+  <div class="profile-bio">
+    <p>{{profile.description}}</p>
+  </div>
+
+  <!-- some social links to show off -->
+  <div class="profile-social-links">
+    <ul class="profile-social-links">
+
+
+    <li>
+      {{#link-to 'index'}}
+        <i class="material-icons">whatshot</i>
+      {{/link-to}}
+    </li>
+
+
+    <li>
+      {{#link-to 'index'}}
+        <i class="material-icons" style="color:red">favorite_border</i>
+      {{/link-to}}
+    </li>
+
+
+    <li>
+      {{#link-to 'index'}}
+        <i class="material-icons" style="color:black">people_outline</i>
+      {{/link-to}}
+    </li>
+
+  </ul>
+</div>
+</div>
+  <div style="text-align:center;">
+<br />
+    <h2>My Activity</h2>
+  <ol class="activity-stream">
+    <li><i class="material-icons">whatshot</i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+    <li><i class="material-icons">whatshot</i> Morbi vitae libero sit amet dui ullamcorper ornare. Nullam ac purus a erat elementum varius eget ornare sem.</li>
+    <li><i class="material-icons">whatshot</i>Suspendisse ut purus dolor.</li>
+    <li><i class="material-icons">whatshot</i> Integer diam est, hendrerit sed bibendum et, mollis ornare ipsum.</li>
+    <li><i class="material-icons">whatshot</i> Aenean non turpis id arcu faucibus aliquet sed a mi. </li>
+  </ol>
+  </div>
+<div style="text-align:center; width:100%; clearfix:auto;">
+  <ul class="pagination pagination-primary">
+    <li><a href="#"><</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li class="active"><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">></a></li>
+  </ul>
+</div>

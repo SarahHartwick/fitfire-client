@@ -1,11 +1,18 @@
 {
-  "name": "ga-wdi-boston.ember-auth",
+  "name": "fitfire-client",
   "dependencies": {
     "ember": "v2.5.1",
     "ember-cli-shims": "0.1.0",
     "ember-cli-test-loader": "0.2.2",
     "ember-qunit-notifications": "0.1.0",
     "bootstrap-sass": "^3.3.6",
-    "blob-polyfill": "^1.0.20150320"
+    "blob-polyfill": "^1.0.20150320",
+    "dropzone": "^4.3.0",
+    "material-kit": "^1.1.0",
+    "font-awesome": "~4.5.0",
+    "jquery-ui": "1.11.4",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.37",
+    "bootstrap-datepicker": "^1.6.4",
+    "select2": "3.5.2"
   }
 }

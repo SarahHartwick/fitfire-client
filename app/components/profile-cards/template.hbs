@@ -1,0 +1,53 @@
+<div class="col-sm-6">
+  <div class="col-sm-12">
+{{#link-to 'profile' profile}}
+<aside class="profile-cards">
+
+  <header>
+
+
+    <a href="http://kanishkkunal.in">
+      <img src="http://livefreeandstart.com/wp-content/uploads/2015/08/1663453-e1441047502792.png">
+    </a>
+
+
+    <h1>{{profile.firstname}} {{profile.lastname}}</h1>
+    <h2>2300 Sparks</h2>
+
+  </header>
+
+
+  <div class="profile-bio">
+    <p>{{profile.description}}</p>
+  </div>
+
+  <!-- some social links to show off -->
+  <ul class="profile-social-links">
+
+
+  <li>
+    {{#link-to 'index'}}
+      <i class="material-icons">whatshot</i>
+    {{/link-to}}
+  </li>
+
+
+  <li>
+    {{#link-to 'index'}}
+      <i class="material-icons" style="color:red">favorite_border</i>
+    {{/link-to}}
+  </li>
+
+
+  <li>
+    {{#link-to 'index'}}
+      <i class="material-icons" style="color:black">people_outline</i>
+    {{/link-to}}
+  </li>
+
+</ul>
+
+    </aside>
+    {{/link-to}}
+  </div>
+ </div>

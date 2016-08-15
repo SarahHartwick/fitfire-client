@@ -1,0 +1,67 @@
+<center>
+  <form {{action "submit" on="submit"}}>
+  <div class="create">
+<h3 style="color:#0F2538; text-align:center;">Create A Spark</h3>
+  	<div class="form-group">
+      <span class="form-group-addon">
+        <i class="material-icons">verified_user</i>
+      </span>
+      {{input type="text" class="form-control"
+              id="name" required="true"
+              placeholder="Spark Title"
+              value=spark.name}}
+  </div>
+
+  <div class="form-group">
+      <span class="form-group-addon">
+        <i class="material-icons">chat</i>
+      </span>
+      {{textarea class="form-control"
+              id="details" required="true"
+              placeholder="Briefly Describe the Spark:
+eg 'Complete 10 reps of lunge jumps, mountain climbers, squat jumps & leglifts.'"
+              value=spark.details}}
+  </div>
+
+<div class="form-group">
+<label>Deadline for Entries</label>
+      {{bootstrap-datepicker-inline value=date}}
+</div>
+
+<div class="form-group">
+  <span class="form-group-addon">
+    <i class="material-icons">assignment_turned_in</i>
+  </span>
+
+  {{select-2
+  content=verifiers
+  value=spark.verification
+  placeholder="Spark Verification Method"
+  allowClear=true
+  optionValuePath="text"
+  }}
+</div>
+
+<div class="form-group">
+  <span class="form-group-addon">
+    <i class="material-icons">dashboard</i>
+  </span>
+  {{textarea class="form-control"
+          id="criteria" required="true"
+          placeholder="Describe the Criteria for Entries:
+eg 'Submit a Video of yourself completing the circuit, 1 minute or less.'"
+          value=spark.criteria}}
+</div>
+
+  <br />
+<center><button type="submit" class="btn btn-primary">
+  Submit
+</button>
+
+<button class="btn btn-default" {{action "reset"}}>
+  Cancel
+</button>
+</center>
+</div>
+</form>
+</center>
