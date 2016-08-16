@@ -253,6 +253,13 @@ body {
     margin-bottom: $spacing-unit / 3;
 }
 
+form {
+  text-align: center;
+  width: 15%;
+  margin: 0 auto;
+  color: #fff !important;
+}
+
 h2 {
     font-size: 18px;
     margin-top: 0;
@@ -330,6 +337,7 @@ h2 {
   header {
     width: 100%;
     height: 100%;
+    padding: 20px;
     text-align: center;
     background: -moz-linear-gradient(45deg,  rgba(19,46,69,0.9) 0%, rgba(19,46,69,0) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(19,46,69,0.9)), color-stop(100%,rgba(19,46,69,0))); /* Chrome,Safari4+ */
@@ -382,7 +390,7 @@ h2 {
 
   h1 {
     text-align: center;
-    font-size: 48px;
+    font-size: 42px;
     font-weight: 400;
     opacity: 0.9;
     margin-bottom: $spacing-unit / 3;
@@ -479,15 +487,18 @@ div#gallery {
 }
 
 
-#background img {
-  width:100%;
+.image {
+  width: 100%;
   margin: 0px;
+  background-size: cover;
+  background-position:center;
+	background-repeat:no-repeat;
 }
 
 #background figure {
   float: left;
   width: 25%;
-  height: 340px;
+  height: 300px;
   position: relative;
   background-color: white;
   text-align: center;
@@ -495,11 +506,6 @@ div#gallery {
   padding: 10px;
   margin: 0px;
   box-shadow: 1px 2px 3px black;
-}
-
-figure.pic1 {
-  // -webkit-transform : rotate(-10deg);
-  // z-index: 1;
 }
 
 #background figure.pic2 {
@@ -864,4 +870,76 @@ figure.pic1 {
   -webkit-transform: scale(1.1,1.1);
   // -webkit-transform : rotate(1deg);
   z-index: 20;
+}
+
+.tagcloud01 ul {
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+  text-align: center;
+}
+.tagcloud01 ul li {
+	display: inline-block;
+	margin: 0 .3em .3em 0;
+	padding: 0;
+}
+.tagcloud01 ul li a {
+	display: inline-block;
+	max-width: 100px;
+	height: 28px;
+	line-height: 28px;
+	padding: 0 1em;
+	background-color: #fff;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	color: #333;
+	font-size: 13px;
+	text-decoration: none;
+	-webkit-transition: .2s;
+	transition: .2s;
+}
+.tagcloud01 ul li a:hover {
+	background-color: #0f2436;
+	border: 1px solid #0f2436;
+	color: #fff;
+}
+
+
+.coolButton {
+  flex: 1 1 auto;
+  margin: -8px auto 15px auto;
+  padding: 10px;
+  border: 1px solid #0f2436;
+  text-align: center;
+  width: 50%;
+  text-transform: uppercase;
+  font-size: 12px;
+  position: relative;
+  overflow:hidden;
+  transition: .3s;
+  &:after {
+    position: absolute;
+    transition: .3s;
+    content: '';
+    width: 0;
+    left: 50%;
+    bottom: 0;
+    height: 3px;
+    background: #0f2436;
+  }
+
+  &:hover {
+    cursor: pointer;
+    &:after {
+      width: 100%;
+      left: 0;
+    }
+  }
+}
+
+.coolButton a {
+  color: #0f2436;
 }

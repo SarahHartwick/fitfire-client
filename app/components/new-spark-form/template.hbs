@@ -2,14 +2,23 @@
   <form {{action "submit" on="submit"}}>
   <div class="create">
 <h3 style="color:#0F2538; text-align:center;">Create A Spark</h3>
-  	<div class="form-group">
+  <div class="form-group">
       <span class="form-group-addon">
-        <i class="material-icons">verified_user</i>
+        <i class="material-icons">whatshot</i>
       </span>
       {{input type="text" class="form-control"
               id="name" required="true"
               placeholder="Spark Title"
               value=spark.name}}
+  </div>
+  <div class="form-group">
+      <span class="form-group-addon">
+        <i class="material-icons">camera</i>
+      </span>
+      {{input type="text" class="form-control"
+              id="photo" required="true"
+              placeholder="Upload A Photo"
+              value=spark.photo}}
   </div>
 
   <div class="form-group">
@@ -51,6 +60,35 @@ eg 'Complete 10 reps of lunge jumps, mountain climbers, squat jumps & leglifts.'
           placeholder="Describe the Criteria for Entries:
 eg 'Submit a Video of yourself completing the circuit, 1 minute or less.'"
           value=spark.criteria}}
+</div>
+
+<div class="form-group">
+  <span class="form-group-addon">
+    <i class="material-icons">fitness_center</i>
+  </span>
+
+  {{select-2
+  content=categories
+  value=spark.category
+  placeholder="Select A Category"
+  allowClear=true
+  optionValuePath="text"
+  }}
+</div>
+
+<div class="form-group">
+  <span class="form-group-addon">
+    <i class="material-icons">poll</i>
+  </span>
+
+  {{select-2
+  content=tags
+  value=tagArray
+  placeholder="Tag This Spark"
+  allowClear=true
+  multiple=true
+  optionValuePath="id"
+  }}
 </div>
 
   <br />

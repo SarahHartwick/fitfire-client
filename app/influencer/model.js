@@ -13,4 +13,5 @@ export default DS.Model.extend({
   photo: DS.attr('string'),
   certification: DS.attr('string'),
   user: DS.belongsTo('user'),
+  sparks: DS.hasMany('spark'),
 });

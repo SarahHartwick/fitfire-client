@@ -1,0 +1,21 @@
+{{influencer-tags}}
+<div style="height:25px; clear:both;"></div>
+<div id="background">
+<div id="gallery">
+  <h2>Live Sparks</h2>
+{{#each model as |spark|}}
+  {{spark-feed spark=spark}}
+{{/each}}
+</div>
+</div>
+<div style="text-align:center; margin-bottom:20px; width:100%; clear:both;">
+<ul class="pagination pagination-primary">
+  <li><a href="#"><</a></li>
+  <li><a href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li class="active"><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+  <li><a href="#">></a></li>
+</ul>
+</div>

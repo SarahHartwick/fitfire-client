@@ -24,6 +24,11 @@ Router.map(function () {
   this.route('influencer', {path: 'influencers/:influencer_id'});
   this.route('spark', {path: 'sparks/:spark_id'});
   this.route('new-spark');
+  this.route('community', {path: 'sparks/community'});
+  this.route('wellness', {path: 'sparks/wellness'});
+  this.route('nutrition', {path: 'sparks/nutrition'});
+  this.route('fitness', {path: 'sparks/fitness'});
+  this.route('spirituality', {path: 'sparks/spirituality'});
 });
 
 export default Router;

@@ -1,7 +1,7 @@
 <div class="author-quote-wrap">
 	<input class="toggle-quote" type="radio" id="AQ-1" name="quote" checked>
 	<div class="author-quote">
-		<div class="pull-left author-photo photo-a animated bounceInLeft" style="background-image:url('https://i.imgsafe.org/df9db8c6df.jpg')">
+		<div class="pull-left author-photo photo-a animated bounceInLeft" style="background-image:url({{spark.photo}})">
 		</div>
 		<div class="pull-right quote-content">
 			<div class="clearfix animated zoomIn"><div class="quote-like pull-right"><span class="love"></span> 423</div></div>
@@ -13,12 +13,28 @@
 
 <br />
 <br />
+<div class="col-sm-6">
 <div class="well" style="text-align:center; margin-top:20px;">
 <h6 style="font-weight:bold"><mark>DETAILS</mark><br />{{spark.details}}</h6>
 <h6 style="font-weight:bold"><mark>Verification Method</mark><br />{{spark.verification}}</h6>
 <h6 style="font-weight:bold"><mark>Verification Criteria</mark><br />{{spark.criteria}}</h6>
-<h6 style="font-weight:bold"><mark>Deadline</mark><br />{{spark.deadline}}</h6>
+<h6 style="font-weight:bold"><mark>Deadline</mark><br />{{spark.dateFormat}}</h6>
+</div>
 
+
+</div>
+<br />
+<br />
+<div class="col-sm-6">
+	  {{#link-to 'influencer' spark.influencer}}<div class="coolButton">View All of {{spark.influencer.firstname}}'s -> Sparks</div>{{/link-to}}
+	<div class="tagcloud01">
+	<ul>
+		{{#each spark.taggings as |tagging|}}
+		<li><a href="#">{{tagging.tag.text}}</a></li>
+		{{/each}}
+	</ul>
+</div>
+<h3 style="text-align:center">Submit Your Entry</h3>
 <div class="wrapper">
   <div class="file-upload">
     <input type="file" />
@@ -37,10 +53,8 @@
     {{fa-icon "twitter"}}
   </div>
 </div>
-
 </div>
-
-<div style="text-align:center;">
+<div style="text-align:center; clear:both;">
 <br />
   <h2>Spark Activity</h2>
 <ol class="activity-stream">

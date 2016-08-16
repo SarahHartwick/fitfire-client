@@ -10,16 +10,40 @@
     </a>
 
     <h1>{{influencer.firstname}} {{influencer.lastname}}</h1>
-    <h2>2300 Sparks</h2>
-    <h2>{{influencer.profession}}</h2>
+    <p>{{influencer.description}}</p>
+
+  {{#if isOwned}}
+    {{#if editing}}
+    <form>
+        {{input type="text" class="input-sm"
+                id="firstname"
+                value=firstname}}
+        {{input type="text" class="input-sm"
+                id="lastname"
+                value=lastname}}
+        {{input type="text" class="input-sm"
+                id="description"
+                value=description}}
+      <button type="submit" class="btn btn-primary btn-sm" {{action "submit"}}>
+        Submit
+      </button>
+    </form>
 
 
+
+    {{else}}
+  <button type="submit" class="btn btn-primary btn-sm" {{action "edit"}}>
+    Edit Profile
+  </button>
+  {{/if}}
+    <br />
+  {{/if}}
   </header>
 
 
-  <div class="profile-bio">
-    <p>{{influencer.description}}</p>
-  </div>
+  <!-- <div class="profile-bio">
+
+  </div> -->
 
   <!-- some social links to show off -->
   <div class="profile-social-links">
@@ -49,9 +73,9 @@
   </ul>
 </div>
 </div>
-<br />
+<!-- <br /> -->
     <!-- <h2 style="text-align:center">{{influencer.firstname}}'s Featured Spark</h2> -->
-    <div class="author-quote-wrap">
+    <!-- <div class="author-quote-wrap">
     	<input class="toggle-quote" type="radio" id="AQ-1" name="quote" checked>
     	<div class="author-quote">
     		<div class="pull-left author-photo photo-a animated bounceInLeft" style="background-image:url('https://i.imgsafe.org/df9db8c6df.jpg')">
@@ -62,75 +86,21 @@
     			<div class="quote-author animated lightSpeedIn">{{spark.user.firstname}} {{spark.user.lastname}}Sarah Hartwick</div>
     		</div>
     	</div>
-    </div>
+    </div> -->
 
     <div id="background">
     <div id="gallery">
-    <h2>Live Sparks</h2>
+    <!-- <h2>Live Sparks</h2> -->
+    {{#each influencer.sparks as |spark|}}
+    {{#link-to 'spark' spark}}
     <figure class="pic1">
-      <img src="https://i.imgsafe.org/ded6595cce.jpg" />
-      <figcaption>Summer 2014</figcaption>
+      <div class="image" style="background-image: url({{spark.photo}}); height:50%">
+      </div>
+      <figcaption><h4 style="text-transform:uppercase; font-family: 'Fjalla One'; color:#0f2436;">{{spark.name}}</h4></figcaption>
+      <figcaption><p>{{spark.category}}</p></figcaption>
     </figure>
-    <figure class="pic1">
-      <img src="https://i.imgsafe.org/ded65e75a0.jpg" />
-      <figcaption>Early morning</figcaption>
-    </figure>
-    <figure class="pic1">
-      <img src="https://i.imgsafe.org/ded66abed9.jpg" />
-      <figcaption>Early morning</figcaption>
-    </figure>
-    <figure class="pic1">
-      <img src="https://i.imgsafe.org/ded6723583.jpg" />
-      <figcaption>Summer 2014</figcaption>
-    </figure>
-    <figure class="pic1">
-      <img src="https://i.imgsafe.org/ded6595cce.jpg" />
-      <figcaption>Summer 2014</figcaption>
-    </figure>
-    <figure class="pic1">
-      <img src="https://i.imgsafe.org/ded65e75a0.jpg" />
-      <figcaption>Early morning</figcaption>
-    </figure>
-    <figure class="pic1">
-      <img src="https://i.imgsafe.org/ded66abed9.jpg" />
-      <figcaption>Early morning</figcaption>
-    </figure>
-    <figure class="pic1">
-      <img src="https://i.imgsafe.org/ded6723583.jpg" />
-      <figcaption>Summer 2014</figcaption>
-    </figure>
-    <figure class="pic1">
-      <img src="https://i.imgsafe.org/ded6595cce.jpg" />
-      <figcaption>Summer 2014</figcaption>
-    </figure>
-    <figure class="pic1">
-      <img src="https://i.imgsafe.org/ded65e75a0.jpg" />
-      <figcaption>Early morning</figcaption>
-    </figure>
-    <figure class="pic1">
-      <img src="https://i.imgsafe.org/ded66abed9.jpg" />
-      <figcaption>Early morning</figcaption>
-    </figure>
-    <figure class="pic1">
-      <img src="https://i.imgsafe.org/ded6723583.jpg" />
-      <figcaption>Summer 2014</figcaption>
-    </figure>
-    <figure class="pic1">
-      <img src="https://i.imgsafe.org/ded6595cce.jpg" />
-      <figcaption>Summer 2014</figcaption>
-    </figure>
-    <figure class="pic1">
-      <img src="https://i.imgsafe.org/ded65e75a0.jpg" />
-      <figcaption>Early morning</figcaption>
-    </figure>
-    <figure class="pic1">
-      <img src="https://i.imgsafe.org/ded66abed9.jpg" />
-      <figcaption>Early morning</figcaption>
-    </figure>
-    <figure class="pic1">
-      <img src="https://i.imgsafe.org/ded6723583.jpg" />
-      <figcaption>Summer 2014</figcaption>
-    </figure>
+    {{/link-to}}
+    {{/each}}
   </div>
 </div>
 
