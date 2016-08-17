@@ -10,15 +10,40 @@
     </a>
 
     <h1>{{profile.firstname}} {{profile.lastname}}</h1>
-    <h2>2300 Sparks</h2>
+    <p>{{profile.description}}</p>
+
+  {{#if isOwned}}
+    {{#if editing}}
+    <form>
+        {{input type="text" class="input-sm"
+                id="firstname"
+                value=firstname}}
+        {{input type="text" class="input-sm"
+                id="lastname"
+                value=lastname}}
+        {{input type="text" class="input-sm"
+                id="description"
+                value=description}}
+      <button type="submit" class="btn btn-primary btn-sm" {{action "patch"}}>
+        Submit
+      </button>
+    </form>
 
 
+
+    {{else}}
+  <button type="submit" class="btn btn-primary btn-sm" {{action "edit"}}>
+    Edit Profile
+  </button>
+  {{/if}}
+    <br />
+  {{/if}}
   </header>
 
 
-  <div class="profile-bio">
-    <p>{{profile.description}}</p>
-  </div>
+  <!-- <div class="profile-bio">
+
+  </div> -->
 
   <!-- some social links to show off -->
   <div class="profile-social-links">
@@ -49,7 +74,6 @@
 </div>
 </div>
   <div style="text-align:center;">
-<br />
     <h2>My Activity</h2>
   <ol class="activity-stream">
     <li><i class="material-icons">whatshot</i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>

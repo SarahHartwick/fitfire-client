@@ -1,11 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-//   activate () {
-//   Ember.$('body').addClass('bg-white');
-// },
-//
-//   deactivate () {
-//   Ember.$('body').removeClass('bg-white');
-// }
+  actions: {
+    delete(spark, influencer) {
+      spark.destroyRecord();
+      this.transitionTo('influencer', influencer);
+    },
+    edit(spark) {
+      this.transitionTo('edit', spark);
+    },
+  },
 });

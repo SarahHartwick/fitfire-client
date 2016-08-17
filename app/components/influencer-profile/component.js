@@ -2,10 +2,38 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   auth: Ember.inject.service(),
+  store: Ember.inject.service(),
   firstname: null,
   lastname: null,
   description: null,
   editing: false,
+
+  tagArray: [],
+
+  tags: Ember.computed('store', function() {
+    let sparks = this.get('influencer.sparks').toArray();
+    console.log((sparks));
+    let sparkIds = sparks.map((s) => s.get('id'));
+    console.log(sparkIds);
+    sparkIds.map((s) => {
+      return this.get('store').query('tagging', {spark_id: s})
+      .then((taggings) => {
+        return taggings.toArray();
+      })
+        .then((taggings) => {
+          taggings.map((tagging) => {
+            let tagArray = this.get('tagArray');
+            if (tagArray.toArray().every((tag) => tag.get('id') !== tagging.get('tag.id')) && tagArray.toArray().length < 18) {
+            tagArray.push(tagging.get('tag'));
+            this.set('tagArray', tagArray.toArray());
+            console.log(tagArray.toArray());
+          }
+          });
+
+        });
+
+      });
+  }),
 
   isOwned: Ember.computed('influencer.user.id', 'auth.credentials.id', function () {
   if (this.get('influencer.user.id') == this.get('auth.credentials.id')) {

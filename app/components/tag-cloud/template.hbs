@@ -1,0 +1,7 @@
+<div class="tagcloud01">
+<ul>
+  {{#each tags as |tag|}}
+  <li>{{#link-to 'search' tag.id}}{{tag.text}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+</div>

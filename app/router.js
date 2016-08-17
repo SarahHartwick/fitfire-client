@@ -29,6 +29,8 @@ Router.map(function () {
   this.route('nutrition', {path: 'sparks/nutrition'});
   this.route('fitness', {path: 'sparks/fitness'});
   this.route('spirituality', {path: 'sparks/spirituality'});
+  this.route('edit', {path: 'edit/:spark_id'});
+  this.route('search', {path: 'search/:tag_id'});
 });
 
 export default Router;

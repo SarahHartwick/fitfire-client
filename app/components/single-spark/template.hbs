@@ -1,7 +1,8 @@
 <div class="author-quote-wrap">
 	<input class="toggle-quote" type="radio" id="AQ-1" name="quote" checked>
 	<div class="author-quote">
-		<div class="pull-left author-photo photo-a animated bounceInLeft" style="background-image:url({{spark.photo}})">
+		<div class="pull-left author-photo">
+			<iframe width="100%" height="100%" src="https://www.youtube.com/embed/FgFUrsszZLM" frameborder="0" allowfullscreen></iframe>
 		</div>
 		<div class="pull-right quote-content">
 			<div class="clearfix animated zoomIn"><div class="quote-like pull-right"><span class="love"></span> 423</div></div>
@@ -10,15 +11,22 @@
 		</div>
 	</div>
 </div>
-
 <br />
 <br />
 <div class="col-sm-6">
 <div class="well" style="text-align:center; margin-top:20px;">
-<h6 style="font-weight:bold"><mark>DETAILS</mark><br />{{spark.details}}</h6>
-<h6 style="font-weight:bold"><mark>Verification Method</mark><br />{{spark.verification}}</h6>
-<h6 style="font-weight:bold"><mark>Verification Criteria</mark><br />{{spark.criteria}}</h6>
-<h6 style="font-weight:bold"><mark>Deadline</mark><br />{{spark.dateFormat}}</h6>
+	<h6 style="font-weight:bold"><mark>DETAILS</mark><br />{{spark.details}}</h6>
+	<h6 style="font-weight:bold"><mark>Verification Method</mark><br />{{spark.verification}}</h6>
+	<h6 style="font-weight:bold"><mark>Verification Criteria</mark><br />{{spark.criteria}}</h6>
+	{{#if isOwned}}
+	<button type="submit" class="btn btn-primary btn-xs" style="float:left" {{action "edit"}}>
+		Edit Spark
+	</button>
+	<button type="submit" class="btn btn-primary btn-xs" style="float:right" {{action "delete"}}>
+		Delete Spark
+	</button>
+	{{/if}}
+	<h6 style="font-weight:bold"><mark>Deadline</mark><br />{{spark.dateFormat}}</h6>
 </div>
 
 
@@ -30,7 +38,7 @@
 	<div class="tagcloud01">
 	<ul>
 		{{#each spark.taggings as |tagging|}}
-		<li><a href="#">{{tagging.tag.text}}</a></li>
+		<li>{{#link-to 'search' tagging.tag.id}}{{tagging.tag.text}}{{/link-to}}</li>
 		{{/each}}
 	</ul>
 </div>

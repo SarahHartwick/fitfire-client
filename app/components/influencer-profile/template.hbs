@@ -11,7 +11,14 @@
 
     <h1>{{influencer.firstname}} {{influencer.lastname}}</h1>
     <p>{{influencer.description}}</p>
-
+    <div class="tagcloud01">
+    <ul>
+      {{#each tagArray as |tag|}}
+      <li>{{#link-to 'search' tag.id}}{{tag.text}}{{/link-to}}</li>
+      {{/each}}
+    </ul>
+    </div>
+    {{tags}}
   {{#if isOwned}}
     {{#if editing}}
     <form>
@@ -94,7 +101,7 @@
     {{#each influencer.sparks as |spark|}}
     {{#link-to 'spark' spark}}
     <figure class="pic1">
-      <div class="image" style="background-image: url({{spark.photo}}); height:50%">
+      <div class="image" style="background-image: url({{spark.photo}}); height: 55%">
       </div>
       <figcaption><h4 style="text-transform:uppercase; font-family: 'Fjalla One'; color:#0f2436;">{{spark.name}}</h4></figcaption>
       <figcaption><p>{{spark.category}}</p></figcaption>
